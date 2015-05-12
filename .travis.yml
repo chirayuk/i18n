@@ -1,0 +1,10 @@
+language: node_js
+sudo: false
+node_js: '0.12.2'
+cache:
+  directories:
+    - ~/.tsd-cache
+    - node_modules
+
+install: ./scripts/setup
+script: ./scripts/travis_build_and_test

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -ev
+
+cd $(git rev-parse --show-toplevel)
+
+./scripts/build
+./scripts/run-tests
+
+./bin/extract_messages
+
+if [[ -z $(git ls-files --modified) ]]; then
+  echo 'This run causes the git repo to change (likely extract_messages caused'
+  echo 'i18nData/messages.json to change.)  Please fix this.'
+  exit 1
+fi

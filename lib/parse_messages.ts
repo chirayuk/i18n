@@ -5,7 +5,7 @@ var S = require('string');
 
 import * as M from './message_types';
 import {adapter as treeAdapter, Node, Attr} from './parse_html';
-import PlaceholderRegistry from './PlaceholderRegistry';
+import PlaceholderRegistry from './placeholderRegistry';
 import {splitN} from './stringUtils';
 import {quoteHtmlAttribute} from './quoting';
 var computeIdForMessageBuilder = require('./fingerprinting').computeIdForMessageBuilder;
